@@ -1,4 +1,4 @@
-<template>
+<template lang="html">
   <div v-if="beer">
       <h3>{{ beer.name }}</h3>
       
