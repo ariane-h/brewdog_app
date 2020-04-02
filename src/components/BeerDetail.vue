@@ -12,6 +12,8 @@
         <li v-for="(food, index) in beer.food_pairing" :food="food" :key="index">{{ food }}</li>
       </ul>
 
+      <button type="button" v-on:click="handleButtonClick">Add to Favourites</button>
+
 
       
   </div>
@@ -23,7 +25,12 @@ import { eventBus } from '../main.js';
 
 export default {
     name: 'beer-detail',
-    props: ['beer']
+    props: ['beer'],
+    methods: {
+    handleButtonClick(){
+      eventBus.$emit('favourite-beer', this.beer.id )
+    }
+  }
 }
 </script>
 
